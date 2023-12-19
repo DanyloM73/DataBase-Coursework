@@ -3,7 +3,7 @@
 const Origin = require('../models/originModel');
 
 const addOrigin = async (request, reply) => {
-    const [rows, fields] = await Origin.add(request.body);
+    const [rows, fields] = await Origin.add(request.body, 'name');
     reply.send({ message: 'Origin added...' });
 };
 

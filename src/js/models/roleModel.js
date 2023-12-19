@@ -9,7 +9,7 @@ class Role extends BaseModel {
     }
 
     async addGrant(roleId, grantId) {
-        const [rows] = await db.execute(`SELECT * FROM ${this.tableName} WHERE id = ? AND FIND_IN_SET(?, grants)`, [roleId, grantId]);
+        const [rows] = await db.execute(`SELECT * FROM ${this.tableName} WHERE id = ? AND FIND_IN_SET(?, TRIM(grants))`, [roleId, grantId]);
         if (rows.length > 0) {
             throw new Error(`Grant with id ${grantId} already exists in role with id ${roleId}`);
         } else {
