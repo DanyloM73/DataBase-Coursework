@@ -9,8 +9,13 @@ class Role extends BaseModel {
     }
 
     async addGrant(roleId, grantId) {
-        return await db.execute(`UPDATE ${this.tableName} SET grants = CONCAT(grants, ?) WHERE id = ?`, [grantId, roleId]);
+        const [rows] = await db.execute(`SELECT * FROM ${this.tableName} WHERE id = ? AND FIND_IN_SET(?, grants)`, [roleId, grantId]);
+        if (rows.length > 0) {
+            throw new Error(`Grant with id ${grantId} already exists in role with id ${roleId}`);
+        } else {
+            return await db.execute(`UPDATE ${this.tableName} SET grants = CONCAT(grants, ?) WHERE id = ?`, [grantId + ',', roleId]);
+        }
     }
 }
 
-module.exports = Role;
+module.exports = new Role();

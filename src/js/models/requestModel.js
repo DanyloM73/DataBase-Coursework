@@ -14,10 +14,9 @@ class Request extends BaseModel {
         if (requestRows.length === 0) {
             throw new NotFoundError(`Request with this id is not exist`);
         } else {
-            const media = new Media();
-            return await media.getByField('id', requestRows[0]['Media_id']);
+            return await Media.getByField('id', requestRows[0]['Media_id']);
         }
     }
 }
 
-module.exports = Request;
+module.exports = new Request();

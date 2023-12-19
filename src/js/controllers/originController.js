@@ -3,15 +3,13 @@
 const Origin = require('../models/originModel');
 
 const addOrigin = async (request, reply) => {
-    const origin = new Origin();
-    const [rows, fields] = await origin.add(request.body);
-    reply.send('Origin added...');
+    const [rows, fields] = await Origin.add(request.body);
+    reply.send({ message: 'Origin added...' });
 };
 
 const deleteOriginById = async (request, reply) => {
-    const origin = new Origin();
-    const [rows, fields] = await origin.deleteById(request.params.id);
-    reply.send('Origin deleted...');
+    const [rows, fields] = await Origin.deleteById(request.params.id);
+    reply.send({ message: 'Origin deleted...' });
 };
 
 module.exports = { 

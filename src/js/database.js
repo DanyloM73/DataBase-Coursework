@@ -1,13 +1,14 @@
 'use strict';
 
+require('dotenv').config();
+
 const mysql = require('mysql2');
-const config = require('./constants.json')
 
 const pool = mysql.createPool({
-    host: config['DB.HOST'],
-    user: config['DB.USER'],
-    password: config['DB.PASS'],
-    database: config['DB.NAME']
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 });
 
-module.exports = pool.promise()
+module.exports = pool.promise();

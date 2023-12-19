@@ -9,4 +9,4 @@ class Origin extends BaseModel {
     }
 }
 
-module.exports = Origin;
+module.exports = new Origin();

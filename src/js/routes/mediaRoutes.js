@@ -3,9 +3,9 @@
 const mediaController = require('../controllers/mediaController');
 
 const mediaRoutes = async (fastify, options) => {
-    fastify.post('/media', mediaController.addMedia);
-    fastify.get('/media/search/:keyword', mediaController.searchMedia);
-    fastify.delete('/media/:id', mediaController.deleteMediaById);
+    fastify.post('/', mediaController.addMedia);
+    fastify.get('/search/:keyword', mediaController.searchMedia);
+    fastify.delete('/:id', mediaController.deleteMediaById);
 };
 
 module.exports = mediaRoutes;

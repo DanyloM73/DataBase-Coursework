@@ -3,33 +3,28 @@
 const User = require('../models/userModel');
 
 const getAllUsers = async (request, reply) => {
-    const user = new User();
-    const [rows, fields] = await user.getAll();
+    const [rows, fields] = await User.getAll();
     reply.send(rows);
 };
 
 const getUserById = async (request, reply) => {
-    const user = new User();
-    const [rows, fields] = await user.getByField('id', request.params.id);
+    const [rows, fields] = await User.getByField('id', request.params.id);
     reply.send(rows);
 };
 
 const addUser = async (request, reply) => {
-    const user = new User();
-    const [rows, fields] = await user.add(request.body, 'email');
-    reply.send('User added...');
+    const [rows, fields] = await User.add(request.body, 'email');
+    reply.send({ message: 'User added...' });
 };
 
 const deleteUserById = async (request, reply) => {
-    const user = new User();
-    const [rows, fields] = await user.deleteById(request.params.id);
-    reply.send('User deleted...');
+    const [rows, fields] = await User.deleteById(request.params.id);
+    reply.send({ message: 'User deleted...' });
 };
 
 const updateUserRoleById = async (request, reply) => {
-    const user = new User();
     const [rows, fields] = await User.updateRoleById(request.params.id, request.params.roleId);
-    reply.send('User role updated...');
+    reply.send({ message: 'User role updated...' });
 };
 
 module.exports = {

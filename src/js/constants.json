@@ -1,6 +1,0 @@
-{
-  "DB.HOST": "localhost",
-  "DB.USER": "root",
-  "DB.PASS": "root",
-  "DB.NAME": "mydb"
-}

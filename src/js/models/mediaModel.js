@@ -20,4 +20,4 @@ class Media extends BaseModel {
     }
 }
 
-module.exports = Media;
+module.exports = new Media();

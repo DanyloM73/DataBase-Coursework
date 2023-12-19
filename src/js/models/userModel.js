@@ -13,4 +13,4 @@ class User extends BaseModel {
     }
 }
 
-module.exports = User;
+module.exports = new User();

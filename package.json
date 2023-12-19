@@ -12,8 +12,10 @@
     "publish": "publish.sh"
   },
   "dependencies": {
+    "@fastify/env": "^4.3.0",
     "@vuepress/plugin-back-to-top": "^1.7.1",
     "@vuepress/plugin-pwa": "^1.7.1",
+    "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
     "mysql2": "^3.6.5",
     "nodemon": "^3.0.2",

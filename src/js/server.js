@@ -1,6 +1,6 @@
 'use strict';
 
-const fastify = require('fastify')();
+const fastify = require('fastify')({ logger: true });
 const mediaRoutes = require('./routes/mediaRoutes');
 const roleRoutes = require('./routes/roleRoutes');
 const userRoutes = require('./routes/userRoutes');
@@ -14,11 +14,11 @@ fastify.addHook('onError', (request, reply, error, done) => {
     done();
 });
 
-fastify.register(mediaRoutes);
-fastify.register(userRoutes);
-fastify.register(roleRoutes);
-fastify.register(originRoutes);
-fastify.register(requestRoutes);
+fastify.register(mediaRoutes, { prefix: '/media' });
+fastify.register(userRoutes, { prefix: '/user' });
+fastify.register(roleRoutes, { prefix: '/role' });
+fastify.register(originRoutes, { prefix: '/origin' });
+fastify.register(requestRoutes, { prefix: '/request' });
 
 const startServer = async () => {
     try {
