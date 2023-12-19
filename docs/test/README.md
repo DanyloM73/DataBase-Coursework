@@ -42,23 +42,63 @@
 
 ### Отримати всіх користувачів
 
-
+<p align="center">
+    <img src="./resources/get-all-users.png">
+</p>
 
 ### Отримати користувача за його id
 
-
+<p align="center">
+    <img src="./resources/get-user-by-id.png">
+</p>
 
 ### Додати нового користувача
 
+<p align="center">
+    <img src="./resources/add-user.png">
+</p>
 
+**В результаті до таблиці було додано новий запис:**
+
+<p align="center">
+    <img src="./resources/add-user-result.png">
+</p>
+
+**Якщо намагаємося додати до таблиці користувача з уже зареєстрованою елктронною поштою, отримуємо помилку:**
+
+<p align="center">
+    <img src="./resources/add-user-error.png">
+</p>
 
 ### Видалити користувача за його id
 
+<p align="center">
+    <img src="./resources/delete-user.png">
+</p>
 
+**В результаті з таблиці було видалено відповідний запис:**
+
+<p align="center">
+    <img src="./resources/delete-user-result.png">
+</p>
+
+**Якщо намагаємося видалити уже не існуючого користувача, отримуємо помилку:**
+
+<p align="center">
+    <img src="./resources/delete-user-error.png">
+</p>
 
 ### Змінити користувачу роль
 
+<p align="center">
+    <img src="./resources/change-user-role.png">
+</p>
 
+**В результаті роль у відповідного користувача змінилась:**
+
+<p align="center">
+    <img src="./resources/change-user-role-result.png">
+</p>
 
 ## Робота з таблицею Media
 
