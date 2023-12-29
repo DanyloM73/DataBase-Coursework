@@ -17,6 +17,7 @@
     "@vuepress/plugin-pwa": "^1.7.1",
     "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
+    "fastify-graceful-shutdown": "^3.5.1",
     "mysql2": "^3.6.5",
     "nodemon": "^3.0.2",
     "publish": "^0.6.0",

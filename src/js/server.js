@@ -7,6 +7,8 @@ const userRoutes = require('./routes/userRoutes');
 const originRoutes = require('./routes/originRoutes');
 const requestRoutes = require('./routes/requestRoutes');
 
+fastify.register(require('fastify-graceful-shutdown'));
+
 fastify.addHook('onError', (request, reply, error, done) => {
     const statusCode = error.statusCode || 500;
     const message = error.message || 'Internal server error';
@@ -19,6 +21,13 @@ fastify.register(userRoutes, { prefix: '/user' });
 fastify.register(roleRoutes, { prefix: '/role' });
 fastify.register(originRoutes, { prefix: '/origin' });
 fastify.register(requestRoutes, { prefix: '/request' });
+
+fastify.after(() => {
+    fastify.gracefulShutdown((signal, next) => {
+      console.log(`Received signal to terminate: ${signal}`);
+      next();
+    });
+});  
 
 const startServer = async () => {
     try {
