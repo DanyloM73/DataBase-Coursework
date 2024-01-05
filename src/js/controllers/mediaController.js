@@ -20,5 +20,5 @@ const deleteMediaById = async (request, reply) => {
 module.exports = {
     addMedia,
     searchMedia,
-    deleteMediaById
+    deleteMediaById,
 };

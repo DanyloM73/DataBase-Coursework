@@ -10,4 +10,4 @@ module.exports = {
         },
         required: ['name', 'location', 'rating']
     }
-}
+};

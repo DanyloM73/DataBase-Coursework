@@ -12,4 +12,4 @@ module.exports = {
         },
         required: ['type', 'url', 'name', 'metadate', 'Origin_id']
     }
-}
+};

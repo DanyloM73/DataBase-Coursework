@@ -9,4 +9,4 @@ module.exports = {
         },
         required: ['name', 'grants']
     }
-}
+};

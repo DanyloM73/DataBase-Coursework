@@ -20,5 +20,5 @@ const deleteRoleById = async (request, reply) => {
 module.exports = { 
     addRole,
     addGrant,
-    deleteRoleById
+    deleteRoleById,
 };

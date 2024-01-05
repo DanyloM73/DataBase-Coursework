@@ -14,5 +14,5 @@ const deleteOriginById = async (request, reply) => {
 
 module.exports = { 
     addOrigin,
-    deleteOriginById
+    deleteOriginById,
 };

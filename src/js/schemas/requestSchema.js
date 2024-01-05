@@ -10,4 +10,4 @@ module.exports = {
         },
         required: ['description', 'Media_id', 'User_id']
     }
-}
+};

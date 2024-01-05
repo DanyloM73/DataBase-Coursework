@@ -20,5 +20,5 @@ const deleteRequestById = async (req, reply) => {
 module.exports = {
     addRequest,
     getMediaByRequestId,
-    deleteRequestById
+    deleteRequestById,
 };

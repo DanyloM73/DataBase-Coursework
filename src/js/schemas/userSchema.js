@@ -12,4 +12,4 @@ module.exports = {
         },
         required: ['name', 'login', 'password', 'email', 'Role_id']
     }
-}
+};
